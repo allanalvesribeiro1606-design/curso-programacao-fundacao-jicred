@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+< lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,7 +22,39 @@
     <label for="">assunto</label>
     <select name="assunto" id="">
       <option value="duvida">duvida</option>
-      <option value="sugestao"></option>
+      <option value="sugestao">sugestao</option>
+      <option value="outro">outro</option>
     </select>
-  </body>
+
+    <br /><br />
+
+    <label for="assunto"></label><br />
+    <textarea name="Message" rows="4" cols="50"></textarea>
+    <br /><br />
+    
+        <h2>Criar um formulário de cadastro</h2>
+
+        <form>
+          <label for="nome">Nome:</label><br />
+          <input type="text" id="nome" name="nome" /><br /><br />
+
+          <label for="email">Email:</label><br />
+          <input type="email" id="email" name="email" /><br /><br />
+
+          <label for="senha">Senha:</label><br />
+          <input type="password" id="senha" name="senha" /><br /><br />
+
+          <label for="nascimento">Data de nascimento:</label><br />
+          <input type="date" id="nascimento" name="nascimento" /><br /><br />
+
+          <label>Gênero:</label><br />
+          <input type="radio" id="masculino" name="genero" value="masculino" />
+          <label for="masculino">Masculino</label>
+          <input type="radio" id="feminino" name="genero" value="feminino" />
+          <label for="feminino">Feminino</label><br /><br />
+
+          <button type="submit">Cadastrar</button>
+        </form>
+      </body>
+
 </html>

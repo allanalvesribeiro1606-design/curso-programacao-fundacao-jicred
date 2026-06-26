@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercício 1 e 2 - Formulário</title>
+  </head>
+
+  <h2>Formulário de Login</h2>
+
+  <form>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" /><br /><br />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" /><br /><br />
+
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" /><br /><br />
+
+    <input type="submit" value="Enviar" />
+
+    <input type="reset" value="Limpar" />
+    <br />
+    <br />
+  </form>
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulário de Cadastro</title>
+  </head>
+  <body>
+    <h2>Criar um formulário de cadastro</h2>
+
+    <form>
+      <label for="nome">Nome:</label><br />
+      <input type="text" id="nome" name="nome" /><br /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" /><br /><br />
+
+      <label for="senha">Senha:</label><br />
+      <input type="password" id="senha" name="senha" /><br /><br />
+
+      <label for="nascimento">Data de nascimento:</label><br />
+      <input type="date" id="nascimento" name="nascimento" /><br /><br />
+
+      <label>Gênero:</label><br />
+      <input type="radio" id="masculino" name="genero" value="masculino" />
+      <label for="masculino">Masculino</label>
+      <input type="radio" id="feminino" name="genero" value="feminino" />
+      <label for="feminino">Feminino</label><br /><br />
+
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <h2>Criar uma lista suspensa</h2>
+    <form>
+      <label for="curso">Escolha um curso:</label>
+      <select id="curso" name="curso">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="javascript">JavaScript</option>
+      </select>
+    </form>
+    <hr />
+    <h2>Área de mensagem</h2>
+    <form>
+      <label for="mensagem">Escreva uma mensagem:</label><br />
+      <textarea
+        id="mensagem"
+        name="mensagem"
+        rows="4"
+        cols="50"
+        placeholder="Digite aqui..."
+      ></textarea>
+    </form>
+    <hr />
+    <h2>Upload de arquivo</h2>
+    <form enctype="multipart/form-data">
+      <label for="foto">Escolha uma foto de perfil:</label><br />
+      <input type="file" id="foto" name="foto" accept="image/*" /><br /><br />
+      <button type="submit">Enviar foto</button>
+    </form>
+    <h2>formulario de pesquisa</h2>
+
+    <label for="qual linguagem deseja aprender">qual linguagem deseja aprender:</label>
+      <select id="curso" name="curso">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="javascript">JavaScript</option>
+      </select>
+    </form>
+  </body>
+</html>
