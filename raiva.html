@@ -1,309 +1,343 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
+    <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Loja Sonho Meu</title>
+    <title>Loja Sonho Meu - Listagem de Itens</title>
+
     <style>
-      body {
-        font-family: sans-serif;
-        padding: 20px;
-        background: #f9fafb;
-      }
-
-      #campoBusca {
-        padding: 8px 12px;
-        border: 1px solid #ccc;
-        border-radius: 6px;
-        font-size: 14px;
-      }
-
-      header h1 {
-        color: #111827;
-        font-size: 24px;
-      }
-
-      header {
+      .topo {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 20px;
+        background-color: #ffffff;
+        padding: 16px 32px;
+        border-bottom: 2px solid #e5e7eb;
       }
-      .filtros {
-        margin-bottom: 20px;
-      }
-      .lista {
+
+      .topo-linha {
         display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
+        align-items: center;
       }
 
-      .card {
-        background: #fff;
-        border: 1px solid #e5e7eb;
-        border-radius: 8px;
-        padding: 16px;
-        width: 220px;
+      .marca {
         display: flex;
-        flex-direction: column;
-      }
-      .card img {
-        width: 100%;
-        height: 140px;
-        object-fit: cover;
-        border-radius: 4px;
-      }
-      .aviso {
-        display: none;
-        color: red;
+        align-items: center;
       }
 
-      .card h3 {
-        font-size: 16px;
-        margin: 8px 0 4px 0;
-        color: #111827;
-      }
-
-      .categoria {
-        color: #10b981;
-        font-size: 12px;
-        font-weight: bold;
+      .marca-icone {
         display: block;
-        margin-top: 12px;
-      }
-
-.descricao {
-  color: #6b7280;
-  font-size: 13px;
-  margin-bottom: 16px;
-  line-height: 1.4;
-}
-
-      .card-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: auto;
-        width: 100%;
-      }
-
-      .preco {
-        color: #10b981 !important;
+        width: 42px;
+        height: 42px;
+        background-color: #16a34a;
+        color: #ffffff;
+        font-size: 20px;
         font-weight: bold;
-        font-size: 16px;
-        margin: 0;
+        text-align: center;
+        line-height: 42px;
+        border-radius: 12px;
+        margin-right: 12px;
       }
 
-      .bnt-comprar {
-        background-color: #1f2937;
-        color: white;
-        border: none;
-        padding: 8px 14px;
-        border-radius: 4px;
+      .marca-nome {
+        font-size: 22px;
         font-weight: bold;
-        cursor: pointer;
+      }
+
+      .marca-texto {
+        display: block;
         font-size: 13px;
+        color: #6b7280;
       }
 
-      .bnt-comprar:hover {
-        background-color: #111827;
+      .perfil {
+        display: flex;
+        align-items: center;
+      }
+
+      .perfil-mobile {
+        display: none;
+      }
+
+      .perfil-dados {
+        text-align: right;
+        margin-right: 12px;
+      }
+
+      .perfil-nome {
+        display: block;
+        font-size: 15px;
+        font-weight: bold;
+      }
+
+      .perfil-cargo {
+        display: block;
+        font-size: 12px;
+        color: #6b7280;
+      }
+
+      .perfil-foto {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 2px solid #16a34a;
+      }
+
+      .rodape {
+        background-color: #1f2937;
+        color: #e5e7eb;
+        font-size: 14px;
+        text-align: center;
+        padding: 20px;
+      }
+
+      @media (max-width: 900px) {
+        .topo {
+          display: block;
+          padding: 16px;
+        }
+
+        .topo-linha {
+          justify-content: space-between;
+        }
+
+        .perfil-desktop {
+          display: none;
+        }
+
+        .perfil-mobile {
+          display: flex;
+        }
       }
     </style>
   </head>
+
   <body>
-    <header>
-      <div
-        class="logo-area"
-        style="display: flex; align-items: center; gap: 12px"
-      >
-        <div
-          class="logo-icon"
-          style="
-            background-color: #10b981;
-            color: white;
-            font-weight: bold;
-            font-size: 20px;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-          "
-        >
-          S
+    <header class="topo">
+      <div class="topo-linha">
+        <div class="marca">
+          <span class="marca-icone">S</span>
+          <div>
+            <span class="marca-nome">Sonho Store</span>
+            <span class="marca-texto">Tudo para o seu dia</span>
+          </div>
         </div>
-        <div>
-          <h1 style="margin: 0; font-size: 18px; color: #111827">
-            Sonho Store
-          </h1>
-          <p style="margin: 0; font-size: 12px; color: #6b7280">
-            Tudo para o seu dia
-          </p>
+
+        <div class="perfil perfil-mobile">
+          <div class="perfil-dados">
+            <span class="perfil-nome">Ana Souza</span>
+            <span class="perfil-cargo">Cliente</span>
+          </div>
+          <img
+            class="perfil-foto"
+            src="https://i.pravatar.cc/100?img=47"
+            alt="Foto de perfil"
+          />
         </div>
       </div>
 
-      <input
-        type="text"
-        id="campoBusca"
-        placeholder="Buscar produtos..."
-        oninput="filtrar()"
-      />
+      <div class="busca">
+        <input
+          class="busca-campo"
+          type="text"
+          id="campoBusca"
+          placeholder="Buscar produtos..."
+        />
+        <span class="busca-lupa">&#128269;</span>
+      </div>
 
-      <img src="https://picsum.photos" alt="Foto de Perfil" class="avatar" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" />
-
+      <div class="perfil perfil-desktop">
+        <div class="perfil-dados">
+          <span class="perfil-nome">Ana Souza</span>
+          <span class="perfil-cargo">Cliente</span>
+        </div>
+        <img
+          class="perfil-foto"
+          src="https://i.pravatar.cc/100?img=47"
+          alt="Foto de perfil"
+        />
       </div>
     </header>
 
-    <div class="filtros">
-      <button onclick="filtrarCategoria('todos')">Todos</button>
-      <button onclick="filtrarCategoria('eletronicos')">Eletrônicos</button>
-      <button onclick="filtrarCategoria('casa')">Casa</button>
-      <button onclick="filtrarCategoria('esporte')">Esporte</button>
-      <button onclick="filtrarCategoria('moda')">Moda</button>
-    </div>
+    <nav class="filtros">
+      <button
+        class="filtro-botao filtro-ativo"
+        onclick="filtrar('todos', this)"
+      >
+        Todos
+      </button>
+      <button class="filtro-botao" onclick="filtrar('eletronicos', this)">
+        Eletrônicos
+      </button>
+      <button class="filtro-botao" onclick="filtrar('casa', this)">Casa</button>
+      <button class="filtro-botao" onclick="filtrar('esporte', this)">
+        Esporte
+      </button>
+      <button class="filtro-botao" onclick="filtrar('moda', this)">Moda</button>
+    </nav>
 
-    <h2 class="titulo-secao">Produtos em destaque</h2>
-    <p class="subtitulo-secao">Escolha uma categoria ou pesquise pelo nome.</p>
+    <main class="conteudo">
+      <h1 class="titulo-secao">Produtos em destaque</h1>
+      <p class="subtitulo-secao">
+        Escolha uma categoria ou pesquise pelo nome.
+      </p>
 
-    <main class="lista" id="lista">
-      <article class="card" data-categoria="eletronicos" data-nome="fone">
-        <img
-          src="https://images.unsplash.com/photo-1512499617640-c2f999b4c1e3?w=300"
-          alt="Fone"
-        />
-        <span class="categoria">eletrônicos</span>
-        <h3>Fone Bluetooth</h3>
-        <p class="descricao">som limpo e bateria de longa duração</p>
-        <div class="card-footer">
-          <p class="preco">R$ 199</p>
-          <button class="bnt-comprar">Comprar</button>
-        </div>
-      </article>
+      <section class="lista" id="lista">
+        <article
+          class="card"
+          data-categoria="eletronicos"
+          data-nome="fone bluetooth"
+        >
+          <img
+            class="card-foto"
+            draggable="true"
+            src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600"
+            alt="Fone de ouvido"
+          />
+          <span class="card-tag">Eletrônicos</span>
+          <h2 class="card-nome">Fone Bluetooth</h2>
+          <p class="card-descricao">Som limpo e bateria de longa duração.</p>
+          <div class="card-rodape">
+            <span class="card-preco">R$ 199</span>
+            <button class="card-botao">Comprar</button>
+          </div>
+        </article>
 
-      <article class="card" data-categoria="eletronicos" data-nome="smartwatch">
-        <img
-          src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300"
-          alt="Smartwatch"
-        />
-        <span class="categoria">eletrônicos</span>
-        <h3>Smartwatch</h3>
-        <div class="card-footer">
-          <p class="preco">R$ 349</p>
-          <button class="bnt-comprar">Comprar</button>
-        </div>
-      </article>
+        <article
+          class="card"
+          data-categoria="eletronicos"
+          data-nome="smartwatch"
+        >
+          <img
+            class="card-foto"
+            draggable="true"
+            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=600"
+            alt="Relógio inteligente"
+          />
+          <span class="card-tag">Eletrônicos</span>
+          <h2 class="card-nome">Smartwatch</h2>
+          <p class="card-descricao">Monitore passos, sono e notificações.</p>
+          <div class="card-rodape">
+            <span class="card-preco">R$ 349</span>
+            <button class="card-botao">Comprar</button>
+          </div>
+        </article>
 
-      <article class="card" data-categoria="casa" data-nome="luminaria de mesa">
-        <img
-          src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=300"
-          alt="Luminária"
-        />
-        <span class="categoria">casa</span>
-        <h3>Luminária</h3>
-        <div class="card-footer">
-          <p class="preco">R$ 89</p>
-          <button class="bnt-comprar">Comprar</button>
-        </div>
-      </article>
+        <article
+          class="card"
+          data-categoria="casa"
+          data-nome="luminaria de mesa"
+        >
+          <img
+            class="card-foto"
+            draggable="true"
+            src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=80&w=600"
+            alt="Luminária de mesa"
+          />
+          <span class="card-tag">Casa</span>
+          <h2 class="card-nome">Luminária de Mesa</h2>
+          <p class="card-descricao">Luz suave para estudar e trabalhar.</p>
+          <div class="card-rodape">
+            <span class="card-preco">R$ 89</span>
+            <button class="card-botao">Comprar</button>
+          </div>
+        </article>
 
-      <article class="card" data-categoria="casa" data-nome="cafeteira">
-        <img
-          src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=300"
-          alt="Cafeteira"
-        />
-        <span class="categoria">casa</span>
-        <h3>Cafeteira</h3>
-        <div class="card-footer">
-          <p class="preco">R$ 259</p>
-          <button class="bnt-comprar">Comprar</button>
-        </div>
-      </article>
+        <article class="card" data-categoria="casa" data-nome="cafeteira">
+          <img
+            class="card-foto"
+            draggable="true"
+            src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?q=80&w=600"
+            alt="Cafeteira"
+          />
+          <span class="card-tag">Casa</span>
+          <h2 class="card-nome">Cafeteira</h2>
+          <p class="card-descricao">Café pronto em poucos minutos.</p>
+          <div class="card-rodape">
+            <span class="card-preco">R$ 259</span>
+            <button class="card-botao">Comprar</button>
+          </div>
+        </article>
 
-      <article class="card" data-categoria="esporte" data-nome="tenis">
-        <img
-          src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300"
-          alt="Tênis"
-        />
-        <span class="categoria">esporte</span>
-        <h3>Tênis de Corrida</h3>
-        <div class="card-footer">
-          <p class="preco">R$ 429</p>
-          <button class="bnt-comprar">Comprar</button>
-        </div>
-      </article>
+        <article
+          class="card"
+          data-categoria="esporte"
+          data-nome="tenis de corrida"
+        >
+          <img
+            class="card-foto"
+            draggable="true"
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=600"
+            alt="Tênis de corrida"
+          />
+          <span class="card-tag">Esporte</span>
+          <h2 class="card-nome">Tênis de Corrida</h2>
+          <p class="card-descricao">Leve, confortável e com boa aderência.</p>
+          <div class="card-rodape">
+            <span class="card-preco">R$ 429</span>
+            <button class="card-botao">Comprar</button>
+          </div>
+        </article>
 
-      <article class="card" data-categoria="esporte" data-nome="garrafa">
-        <img
-          src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300"
-          alt="Garrafa"
-        />
-        <span class="categoria">esporte</span>
-        <h3>Garrafa Térmica</h3>
-        <div class="card-footer">
-          <p class="preco">R$ 79</p>
-          <button class="bnt-comprar">Comprar</button>
-        </div>
-      </article>
+        <article
+          class="card"
+          data-categoria="esporte"
+          data-nome="garrafa termica"
+        >
+          <img
+            class="card-foto"
+            draggable="true"
+            src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=600"
+            alt="Garrafa térmica"
+          />
+          <span class="card-tag">Esporte</span>
+          <h2 class="card-nome">Garrafa Térmica</h2>
+          <p class="card-descricao">Mantém a temperatura por 12 horas.</p>
+          <div class="card-rodape">
+            <span class="card-preco">R$ 79</span>
+            <button class="card-botao">Comprar</button>
+          </div>
+        </article>
 
-      <article class="card" data-categoria="moda" data-nome="mochila">
-        <img
-          src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300"
-          alt="Mochila"
-        />
-        <span class="categoria">moda</span>
-        <h3>Mochila Casual</h3>
-        <div class="card-footer">
-          <p class="preco">R$ 149</p>
-          <button class="bnt-comprar">Comprar</button>
-        </div>
-      </article>
+        <article class="card" data-categoria="moda" data-nome="mochila casual">
+          <img
+            class="card-foto"
+            draggable="true"
+            src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=600"
+            alt="Mochila"
+          />
+          <span class="card-tag">Moda</span>
+          <h2 class="card-nome">Mochila Casual</h2>
+          <p class="card-descricao">Espaço para notebook e materiais.</p>
+          <div class="card-rodape">
+            <span class="card-preco">R$ 149</span>
+            <button class="card-botao">Comprar</button>
+          </div>
+        </article>
 
-      <article class="card" data-categoria="moda" data-nome="oculos">
-        <img
-          src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=300"
-          alt="Óculos"
-        />
-        <span class="categoria">moda</span>
-        <h3>Óculos de Sol</h3>
-        <div class="card-footer">
-          <p class="preco">R$ 119</p>
-          <button class="bnt-comprar">Comprar</button>
-        </div>
-      </article>
+        <article class="card" data-categoria="moda" data-nome="oculos de sol">
+          <img
+            class="card-foto"
+            draggable="true"
+            src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=600"
+            alt="Óculos de sol"
+          />
+          <span class="card-tag">Moda</span>
+          <h2 class="card-nome">Óculos de Sol</h2>
+          <p class="card-descricao">Proteção UV com estilo moderno.</p>
+          <div class="card-rodape">
+            <span class="card-preco">R$ 119</span>
+            <button class="card-botao">Comprar</button>
+          </div>
+        </article>
+      </section>
+
+      <p class="aviso" id="aviso">Nenhum produto encontrado nesta busca.</p>
     </main>
 
-    <p class="aviso" id="aviso">Nenhum produto encontrado.</p>
-
-    <script>
-      let cat = "todos";
-
-      function filtrarCategoria(c) {
-        cat = c;
-        filtrar();
-      }
-
-      function filtrar() {
-        const busca = document.getElementById("campoBusca").value.toLowerCase();
-        const cards = document.querySelectorAll(".card");
-        let achou = false;
-
-        cards.forEach((card) => {
-          const okCat = cat === "todos" || card.dataset.categoria === cat;
-          const okBusca = card.dataset.nome.includes(busca);
-
-          if (okCat && okBusca) {
-            card.style.display = "block";
-            achou = true;
-          } else {
-            card.style.display = "none";
-          }
-        });
-
-        document.getElementById("aviso").style.display = achou
-          ? "none"
-          : "block";
-      }
-    </script>
+    <footer class="rodape">
+      <p>Sonho Store &copy; 2026 - Projeto de estudo da Fundação Sonho Meu</p>
+    </footer>
   </body>
 </html>
